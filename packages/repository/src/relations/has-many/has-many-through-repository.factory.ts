@@ -65,7 +65,7 @@ export function createHasManyThroughRepositoryFactory<
     }
 
     function getThroughFkConstraint(
-      targetInstance: Target,
+      targetInstance: Partial<Target>,
     ): DataObject<Through> {
       const constriant: DataObject<Through> = createThroughFkConstraint<
         Target,

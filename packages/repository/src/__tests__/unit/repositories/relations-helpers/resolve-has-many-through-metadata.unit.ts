@@ -78,7 +78,14 @@ describe('HasManyThroughHelpers', () => {
       expect(result).to.containEql({productId: 1});
     });
   });
-  context('resolveHasManyThroughMetadata', () => {
+  it('throws if targetInstance is undefined', () => {
+    const resolved = resolvedMetadata as HasManyThroughResolvedDefinition;
+
+    expect(() => createThroughFkConstraint(resolved, undefined)).to.throw(
+      /"targetInstance" cannot be undefined/,
+    );
+  });
+  context('resolveHasManyThßroughMetadata', () => {
     it('throws if the wrong metadata type is used', async () => {
       const metadata: unknown = {
         name: 'category',

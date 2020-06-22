@@ -139,7 +139,7 @@ export function createThroughConstraint<Through extends Entity, ForeignKeyType>(
  *    keyTo: 'productId',
  *  },
  * };
- * createThroughConstraint(resolvedMetadata, {3, name: 'a product'});
+ * createThroughConstraint(resolvedMetadata, 3);
  *
  * >>> {productId: 3}
  * createThroughConstraint(resolvedMetadata, {id: 3, name: 'a product'});
